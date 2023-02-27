@@ -45,11 +45,16 @@ export class HomeComponent implements OnInit {
   }
 
   usrDetails() {
-    this.getUsrDetails().subscribe((data) => {
-      data.forEach((ele) => {
-        this.usrData.push(ele);
-      });
-    });
+    this.getUsrDetails().subscribe(
+      (data) => {
+        data.forEach((ele) => {
+          this.usrData.push(ele);
+        });
+      },
+      (error) => {
+        console.log(`Data is not fetched from API due to error ${error}`);
+      }
+    );
   }
 
   getUsrDetails(): Observable<IUser[]> {
