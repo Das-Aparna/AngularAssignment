@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  font-size: 18px;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 5px;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #087f5b;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+thead tr th:first-child {
+  padding-left: 2rem;
+}
+
+tbody tr td:first-child {
+  padding-left: 2rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}

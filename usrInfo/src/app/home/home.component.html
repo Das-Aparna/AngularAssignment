@@ -1,0 +1,43 @@
+<main class="body-container">
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+        <th>address</th>
+        <th>phone number</th>
+        <th>company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of usrData">
+        <td>{{ detail.name }}</td>
+        <td>{{ detail.username }}</td>
+        <td>{{ detail.email }}</td>
+        <td>
+          <div *ngFor="let address of detail.address | keyvalue">
+            <span *ngIf="address.key != 'geo'">
+              {{ address.key }} : {{ address.value }}
+            </span>
+            <span *ngIf="address.key == 'geo'">
+              <div>{{ address.key }}:</div>
+              <div *ngFor="let geo of address.value | keyvalue">
+                <span>{{ geo.key }}:</span>
+                <span>{{ geo.value }}</span>
+              </div>
+            </span>
+          </div>
+          <br />
+        </td>
+        <td>{{ detail.phone }}</td>
+        <td>
+          <div *ngFor="let company of detail.company | keyvalue">
+            <div>{{ company.key }}: {{ company.value }}</div>
+            <br />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>

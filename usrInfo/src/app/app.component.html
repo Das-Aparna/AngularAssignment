@@ -1,0 +1,39 @@
+<header class="header">
+  <nav class="main-nav">
+    <ul class="main-nav-list">
+      <li>
+        <a
+          class="main-nav-link"
+          routerLink=""
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          href="#"
+          >User Information</a
+        >
+        <span class="separator">|</span>
+      </li>
+      <li>
+        <a
+          class="main-nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/about']"
+          href="#"
+          >About Us</a
+        >
+        <span class="separator">|</span>
+      </li>
+      <li>
+        <a
+          class="main-nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/contact']"
+          href="#"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div id="date">&nbsp; | date: 'longDate'</div>
+</header>
+
+<router-outlet></router-outlet>
